@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/ts-fitness-leaderboard/static/css/main.f855e6bc.css",
-    "main.js": "/ts-fitness-leaderboard/static/js/main.f6ff3ee0.js",
+    "main.js": "/ts-fitness-leaderboard/static/js/main.069d19ce.js",
     "static/js/453.440fdb68.chunk.js": "/ts-fitness-leaderboard/static/js/453.440fdb68.chunk.js",
     "static/media/logo.svg": "/ts-fitness-leaderboard/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/ts-fitness-leaderboard/index.html",
     "main.f855e6bc.css.map": "/ts-fitness-leaderboard/static/css/main.f855e6bc.css.map",
-    "main.f6ff3ee0.js.map": "/ts-fitness-leaderboard/static/js/main.f6ff3ee0.js.map",
+    "main.069d19ce.js.map": "/ts-fitness-leaderboard/static/js/main.069d19ce.js.map",
     "453.440fdb68.chunk.js.map": "/ts-fitness-leaderboard/static/js/453.440fdb68.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.f6ff3ee0.js"
+    "static/js/main.069d19ce.js"
   ]
 }
