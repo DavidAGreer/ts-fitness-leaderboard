@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.leaderboard-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.leaderboard {
+  border-collapse: collapse;
+  width: 30%;
+}
+
+.leaderboard th, .leaderboard td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.leaderboard th {
+  background-color: #f2f2f2;
+}
