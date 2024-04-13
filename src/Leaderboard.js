@@ -1,28 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Leaderboard({ entries }) {
-  const sortedEntries = entries && entries.sort((a, b) => {
-    if (typeof a.value === 'string' && typeof b.value === 'string') {
-      // Assuming time is in the format of mm:ss
-      const [aMinutes, aSeconds] = a.value.split(':');
-      const [bMinutes, bSeconds] = b.value.split(':');
-      const aTotalSeconds = parseInt(aMinutes) * 60 + parseInt(aSeconds);
-      const bTotalSeconds = parseInt(bMinutes) * 60 + parseInt(bSeconds);
-      return aTotalSeconds - bTotalSeconds;
-    } else {
-      return b.value - a.value;
-    }
-  });
+function Leaderboard({ entries }) {  
+const sortedEntries = entries.sort((a, b) => b.value - a.value);
 
-  const updatedEntries = sortedEntries && sortedEntries.reduce((acc, entry) => {
-    const existingEntry = acc.find(e => e.name === entry.name);
-    if (existingEntry) {
-      existingEntry.value = entry.value;
-    } else {
-      acc.push(entry);
-    }
-    return acc;
-  }, []);
+
 
   return (
     <div>
@@ -34,7 +15,7 @@ function Leaderboard({ entries }) {
           </tr>
         </thead>
         <tbody>
-        {updatedEntries && updatedEntries.map((entry, index) => (
+        {sortedEntries && sortedEntries.map((entry, index) => (
           <tr key={index}>
               <td>{entry.name}</td>
               <td>{entry.value}</td>

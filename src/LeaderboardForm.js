@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-
 function LeaderboardForm({ onAddEntry }) {
   const [name, setName] = useState('');
   const [value, setValue] = useState('');
   const [category, setCategory] = useState('bench');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    onAddEntry(category, { name, value });
-    setName('');
-    setValue('');
+    const entry = { name, value, category };
+    if (typeof onAddEntry === 'function') {
+      await onAddEntry(entry);
+    } else {
+      console.error('handleAddEntry is not a function' + ' - ' + typeof handleAddEntry);
+    }
   };
 
   return (
@@ -26,7 +28,7 @@ function LeaderboardForm({ onAddEntry }) {
       <input
         type="text"
         placeholder="Name"
-        value={name}
+        defaultValue={name}
         onChange={(e) => setName(e.target.value)}
       />
       <input
